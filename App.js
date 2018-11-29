@@ -18,7 +18,11 @@ const AppNavigator = createStackNavigator({
     screen: SignUp
   },
   RoomPage: {
-    screen: RoomPage
+    screen: RoomPage,
+    navigationOptions: {
+      headerStyle: { backgroundColor: "#ff5b60" }
+      // header:
+    }
   }
 });
 

@@ -7,6 +7,7 @@ import {
   StyleSheet,
   View,
   FlatList,
+  Dimensions,
   ScrollView,
   Text
 } from "react-native";
@@ -28,6 +29,11 @@ class RoomPage extends React.Component {
   }
 
   render() {
+    const width = Dimensions.get("window").width;
+    console.log(width);
+
+    const height = Dimensions.get("window").height;
+    console.log(height);
     return (
       <ScrollView>
         <FlatList
@@ -35,51 +41,19 @@ class RoomPage extends React.Component {
           renderItem={({ item }) => (
             <View>
               <ImageBackground
-                style={{
-                  with: 400,
-                  height: 200,
-                  position: "relative",
-                  top: 2,
-                  left: 2
-                }}
+                style={styles.imageBackgroundRoom}
                 source={{ uri: item.photos[0] }}
               >
-                <Text
-                  style={{
-                    backgroundColor: "black",
-                    opacity: 0.8,
-                    paddingBottom: 20,
-                    paddingLeft: 10,
-                    fontSize: 40,
-
-                    color: "white",
-                    position: "absolute",
-                    bottom: 1,
-                    left: 1
-                  }}
-                >
-                  {item.price}€
-                </Text>
+                <Text style={styles.price}>{item.price}€</Text>
               </ImageBackground>
-              <View
-                style={{
-                  borderBottomWidth: 1,
-                  borderBottomColor: "#c9c3c3",
-                  marginTop: 10,
-                  flex: 1,
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  marginBottom: 20
-                }}
-              >
+              <View style={styles.textDescription}>
                 <View>
-                  <Text style={{ marginBottom: 20, fontSize: 20 }}>
+                  <Text style={{ marginBottom: 20, fontSize: 18 }}>
                     {item.title}
                   </Text>
                   <View
                     style={{
                       width: 60,
-
                       flexDirection: "row"
                     }}
                   >
@@ -110,8 +84,33 @@ class RoomPage extends React.Component {
 }
 
 export default RoomPage;
-// const styles = StyleSheet.create({
-//   containerRating: {
-//     justifyContent: "flex-start"
-//   }
-// });
+const styles = StyleSheet.create({
+  imageBackgroundRoom: {
+    width: "auto",
+    height: 200,
+    position: "relative"
+  },
+  price: {
+    backgroundColor: "black",
+    borderRadius: 10,
+    opacity: 0.8,
+    paddingVertical: 10,
+    paddingLeft: 10,
+    fontSize: 40,
+
+    color: "white",
+    position: "absolute",
+    bottom: 12,
+    left: 1
+  },
+  textDescription: {
+    borderBottomWidth: 1,
+    borderBottomColor: "#c9c3c3",
+    marginTop: 10,
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 20,
+    paddingVertical: 10
+  }
+});
