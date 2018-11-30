@@ -49,7 +49,7 @@ class RoomLists extends React.Component {
                     photos={item.photos}
                     title={item.title}
                     price={item.price}
-                    rating={item.rating}
+                    rating={item.ratingValue}
                     reviews={item.reviews}
                     user={item.user}
                   />

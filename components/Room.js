@@ -1,6 +1,6 @@
 import React from "react";
 
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, Text } from "react-native";
 import MapView from "react-native-maps";
 import CardRoom from "./CardRoom";
 class Room extends React.Component {
@@ -13,28 +13,29 @@ class Room extends React.Component {
           <CardRoom
             photos={item.photos}
             title={item.title}
+            description={item.description}
             price={item.price}
-            rating={item.rating}
+            rating={item.ratingValue}
             reviews={item.reviews}
             user={item.user}
           />
+
           <MapView
             style={{
               width: "100%",
-              height: 300,
-              marginTop: 50
+              height: 400
             }}
             initialRegion={{
-              latitude: 48.8498514,
-              longitude: 2.2841681,
+              latitude: item.loc[1],
+              longitude: item.loc[0],
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421
             }}
           >
             <MapView.Marker
               coordinate={{
-                latitude: 48.8498514,
-                longitude: 2.2841681
+                latitude: item.loc[1],
+                longitude: item.loc[0]
               }}
             />
           </MapView>

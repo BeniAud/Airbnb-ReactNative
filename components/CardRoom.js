@@ -17,8 +17,11 @@ class CardRoom extends React.Component {
           </ImageBackground>
           <View style={styles.textDescription}>
             <View>
-              <Text style={{ marginBottom: 20, fontSize: 18 }}>
+              <Text style={{ marginBottom: 20, fontSize: 15 }}>
                 {this.props.title}
+                <Text numberOfLines={1} style={{ fontSize: 15 }}>
+                  {this.props.description}
+                </Text>
               </Text>
               <View
                 style={{
@@ -32,7 +35,7 @@ class CardRoom extends React.Component {
                   starSize={20}
                   disabled={false}
                   maxStars={5}
-                  rating={this.props.ratingValue}
+                  rating={this.props.rating}
                 />
                 <Text style={{ paddingLeft: 5, color: "#c9c3c3" }}>
                   {this.props.reviews} reviews
