@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image
 } from "react-native";
-
+import Icon from "react-native-vector-icons/FontAwesome";
 class Home extends React.Component {
   render() {
     return (
@@ -28,6 +28,7 @@ class Home extends React.Component {
         </View>
 
         <View>
+          <Icon name="home" size={30} color="#900" />
           <Text
             style={{
               fontSize: 50,
@@ -73,7 +74,7 @@ class Home extends React.Component {
           <TouchableOpacity
             style={styles.loginHomeRoom}
             onPress={() => {
-              this.props.navigation.navigate("RoomPage");
+              this.props.navigation.navigate("RoomLists");
             }}
           >
             <Text style={styles.buttonRoom}>Visualiser les annonces</Text>
