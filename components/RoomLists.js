@@ -33,32 +33,30 @@ class RoomLists extends React.Component {
     console.log(height);
     return (
       <ScrollView>
-        <View>
-          <FlatList
-            data={this.state.rooms}
-            renderItem={({ item }) => (
-              <View>
-                <TouchableOpacity
-                  onPress={() => {
-                    this.props.navigation.navigate("Room", {
-                      item
-                    });
-                  }}
-                >
-                  <CardRoom
-                    photos={item.photos}
-                    title={item.title}
-                    price={item.price}
-                    rating={item.ratingValue}
-                    reviews={item.reviews}
-                    user={item.user}
-                  />
-                </TouchableOpacity>
-              </View>
-            )}
-            keyExtractor={(item, index) => item._id}
-          />
-        </View>
+        <FlatList
+          data={this.state.rooms}
+          renderItem={({ item }) => (
+            <View>
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate("Room", {
+                    item
+                  });
+                }}
+              >
+                <CardRoom
+                  photos={item.photos}
+                  title={item.title}
+                  price={item.price}
+                  rating={item.ratingValue}
+                  reviews={item.reviews}
+                  user={item.user}
+                />
+              </TouchableOpacity>
+            </View>
+          )}
+          keyExtractor={(item, index) => item._id}
+        />
       </ScrollView>
     );
   }

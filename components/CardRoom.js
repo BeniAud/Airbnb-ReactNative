@@ -1,34 +1,24 @@
 import React from "react";
-
 import { Image, ImageBackground, StyleSheet, View, Text } from "react-native";
-
 import StarRating from "react-native-star-rating";
 
 class CardRoom extends React.Component {
   render() {
     return (
-      <View>
-        <View>
-          <ImageBackground
-            style={styles.imageBackgroundRoom}
-            source={{ uri: this.props.photos[0] }}
-          >
-            <Text style={styles.price}>{this.props.price}€</Text>
-          </ImageBackground>
-          <View style={styles.textDescription}>
-            <View>
-              <Text style={{ marginBottom: 20, fontSize: 15 }}>
-                {this.props.title}
-                <Text numberOfLines={1} style={{ fontSize: 15 }}>
-                  {this.props.description}
-                </Text>
-              </Text>
-              <View
-                style={{
-                  width: 60,
-                  flexDirection: "row"
-                }}
-              >
+      <View style={{ flex: 1 }}>
+        <ImageBackground
+          style={styles.imageBackgroundRoom}
+          source={{ uri: this.props.photos[0] }}
+        >
+          <Text style={styles.price}>{this.props.price}€</Text>
+        </ImageBackground>
+        <View style={styles.textDescription}>
+          <View style={{ marginBottom: 20 }}>
+            <Text numberOfLines={1} style={styles.textTitle}>
+              {this.props.title}
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              <View style={{ paddingTop: 10 }}>
                 <StarRating
                   fullStarColor={"#ffc200"}
                   emptyStarColor={"#c9c3c3"}
@@ -37,16 +27,18 @@ class CardRoom extends React.Component {
                   maxStars={5}
                   rating={this.props.rating}
                 />
-                <Text style={{ paddingLeft: 5, color: "#c9c3c3" }}>
-                  {this.props.reviews} reviews
-                </Text>
               </View>
+              <Text
+                style={{ color: "#c9c3c3", paddingTop: 12, paddingLeft: 2 }}
+              >
+                {this.props.reviews} reviews
+              </Text>
             </View>
-            <Image
-              style={{ width: 70, height: 70, borderRadius: 70 / 2 }}
-              source={{ uri: this.props.user.account.photos[0] }}
-            />
           </View>
+          <Image
+            style={{ width: 70, height: 70, borderRadius: 70 / 2 }}
+            source={{ uri: this.props.user.account.photos[0] }}
+          />
         </View>
       </View>
     );
@@ -56,7 +48,6 @@ class CardRoom extends React.Component {
 export default CardRoom;
 const styles = StyleSheet.create({
   imageBackgroundRoom: {
-    width: "auto",
     height: 200,
     position: "relative"
   },
@@ -73,13 +64,14 @@ const styles = StyleSheet.create({
     left: 1
   },
   textDescription: {
-    borderBottomWidth: 1,
-    borderBottomColor: "#c9c3c3",
-    marginTop: 10,
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 20,
+    marginBottom: 10,
+    marginHorizontal: 10,
     paddingVertical: 10
+  },
+  textTitle: {
+    fontSize: 18
   }
 });
