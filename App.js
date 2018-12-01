@@ -3,8 +3,8 @@ import LoginForm from "./components/LoginForm";
 import Homescreen from "./components/Home";
 import RoomLists from "./components/RoomLists";
 import SignUp from "./components/SignUp";
-import CardRoom from "./components/CardRoom";
 import Room from "./components/Room";
+import RentRoom from "./components/RentRoom";
 const AppNavigator = createStackNavigator({
   Home: {
     screen: Homescreen,
@@ -27,6 +27,9 @@ const AppNavigator = createStackNavigator({
   },
   Room: {
     screen: Room
+  },
+  RentRoom: {
+    screen: RentRoom
   }
 });
 

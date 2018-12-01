@@ -1,30 +1,29 @@
 import React from "react";
 
-import { View, ScrollView, Text } from "react-native";
+import { View } from "react-native";
 import MapView from "react-native-maps";
-import CardRoom from "./CardRoom";
 class Map extends React.Component {
   render() {
-    const item = this.props.navigation.getParam("item");
+    //
 
     return (
       <View>
         <MapView
           style={{
             width: "100%",
-            height: 400
+            height: 200
           }}
           initialRegion={{
-            latitude: item.loc[1],
-            longitude: item.loc[0],
+            latitude: this.props.location[1],
+            longitude: this.props.location[0],
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421
           }}
         >
           <MapView.Marker
             coordinate={{
-              latitude: item.loc[1],
-              longitude: item.loc[0]
+              latitude: this.props.location[1],
+              longitude: this.props.location[0]
             }}
           />
         </MapView>

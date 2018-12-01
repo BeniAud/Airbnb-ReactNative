@@ -28,7 +28,6 @@ class Home extends React.Component {
         </View>
 
         <View>
-          <Icon name="home" size={30} color="#900" />
           <Text
             style={{
               fontSize: 50,

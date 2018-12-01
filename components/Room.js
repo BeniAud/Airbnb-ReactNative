@@ -1,9 +1,16 @@
 import React from "react";
 
-import { View, ScrollView, Text, StyleSheet } from "react-native";
-import MapView from "react-native-maps";
-import Icon from "react-native-vector-icons/FontAwesome";
+import {
+  View,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  StyleSheet
+} from "react-native";
 import CardRoom from "./CardRoom";
+import Map from "./Map";
+import DescriptionCard from "./DescriptionCard";
+import RentRoom from "./RentRoom";
 class Room extends React.Component {
   render() {
     const item = this.props.navigation.getParam("item");
@@ -19,28 +26,18 @@ class Room extends React.Component {
             reviews={item.reviews}
             user={item.user}
           />
-          <Text numberOfLines={3} style={styles.itemDescript}>
-            {item.description}
-          </Text>
-          <MapView
-            style={{
-              width: "100%",
-              height: 300
-            }}
-            initialRegion={{
-              latitude: item.loc[1],
-              longitude: item.loc[0],
-              latitudeDelta: 0.00922,
-              longitudeDelta: 0.00421
-            }}
-          >
-            <MapView.Marker
-              coordinate={{
-                latitude: item.loc[1],
-                longitude: item.loc[0]
+          <DescriptionCard description={item.description} />
+          <Map location={item.loc} />
+          <View style={styles.buttonOpacity}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                this.props.navigation.navigate("RentRoom");
               }}
-            />
-          </MapView>
+            >
+              <Text style={styles.buttonAdd}>Réserver</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     );
@@ -48,10 +45,19 @@ class Room extends React.Component {
 }
 
 export default Room;
+
 const styles = StyleSheet.create({
-  itemDescript: {
-    paddingBottom: 20,
-    fontSize: 15,
-    marginHorizontal: 10
+  buttonAdd: {
+    fontSize: 20,
+    color: "white",
+    backgroundColor: "#ff5b60",
+    padding: 15
+  },
+  button: {
+    borderRadius: 10
+  },
+  buttonOpacity: {
+    alignItems: "center",
+    marginTop: 20
   }
 });

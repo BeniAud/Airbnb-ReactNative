@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
         console.log(response.data);
 
         if (response.data && response.data.token) {
-          this.props.navigation.navigate("RoomPage", {
+          this.props.navigation.navigate("RoomLists", {
             username: response.data.account.username
           });
           ({
@@ -57,7 +57,7 @@ class LoginForm extends React.Component {
             value={this.state.email}
             onChangeText={value => this.setState({ email: value })}
           />
-          <Text>Une adresse e-mail est obligatoire.</Text>
+          {/* <Text>Une adresse e-mail est obligatoire.</Text> */}
           <TextInput
             style={styles.textInput}
             label="Password"
@@ -67,7 +67,7 @@ class LoginForm extends React.Component {
             value={this.state.password}
             onChangeText={value => this.setState({ password: value })}
           />
-          <Text>Un mot de passe est obligatoire.</Text>
+          {/* <Text>Un mot de passe est obligatoire.</Text> */}
           <Text>
             {" "}
             {this.state.loading === true

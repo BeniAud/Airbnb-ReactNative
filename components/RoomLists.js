@@ -5,8 +5,7 @@ import {
   View,
   FlatList,
   Dimensions,
-  ScrollView,
-  Text
+  ScrollView
 } from "react-native";
 
 import CardRoom from "./CardRoom";

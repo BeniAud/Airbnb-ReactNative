@@ -5,12 +5,14 @@ import StarRating from "react-native-star-rating";
 class CardRoom extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View>
         <ImageBackground
           style={styles.imageBackgroundRoom}
           source={{ uri: this.props.photos[0] }}
         >
-          <Text style={styles.price}>{this.props.price}€</Text>
+          <View style={styles.priceTag}>
+            <Text style={styles.price}>{this.props.price}€</Text>
+          </View>
         </ImageBackground>
         <View style={styles.textDescription}>
           <View style={{ marginBottom: 20 }}>
@@ -49,19 +51,32 @@ export default CardRoom;
 const styles = StyleSheet.create({
   imageBackgroundRoom: {
     height: 200,
+
+    flex: 1,
+    borderRadius: 4,
     position: "relative"
   },
-  price: {
-    backgroundColor: "rgba(0,0,0,0.5)",
-    borderRadius: 10,
-    opacity: 0.8,
-    paddingVertical: 10,
-    paddingLeft: 10,
-    fontSize: 40,
-    color: "white",
+  priceTag: {
     position: "absolute",
-    bottom: 12,
-    left: 1
+    top: 150,
+    left: 15,
+    backgroundColor: "rgba(255,255,255, 0.9)",
+    borderRadius: 4
+  },
+  price: {
+    // backgroundColor: "white",
+    // borderRadius: 10,
+    // paddingVertical: 10,
+    // paddingLeft: 10,
+    // fontSize: 20,
+    // color: "black",
+    // position: "absolute",
+    // bottom: 0,
+    // left: 1
+    fontWeight: "700",
+    fontSize: 18,
+    color: "#262626",
+    padding: 10
   },
   textDescription: {
     flex: 1,
