@@ -37,8 +37,9 @@ class Chat extends React.Component {
         onSend={messages => this.onSend(messages)}
         user={{
           _id: 1,
-          text: "My message",
+          text: "This is a system message",
           createdAt: new Date(Date.UTC(2016, 5, 11, 17, 20, 0)),
+          system: true,
           user: {
             _id: 2,
             name: "React Native",

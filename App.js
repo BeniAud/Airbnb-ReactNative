@@ -14,26 +14,50 @@ const AppNavigator = createStackNavigator({
     }
   },
   LoginForm: {
-    screen: LoginForm
+    screen: LoginForm,
+    navigationOptions: {
+      title: "Connexion",
+      headerStyle: { backgroundColor: "#008489" },
+      headerTintColor: "white"
+    }
   },
   SignUp: {
-    screen: SignUp
+    screen: SignUp,
+    navigationOptions: {
+      title: "Inscription",
+      headerStyle: { backgroundColor: "#008489" },
+      headerTintColor: "white"
+    }
   },
   RoomLists: {
     screen: RoomLists,
     navigationOptions: {
-      title: "AirBnb",
-      headerStyle: { backgroundColor: "#ff5b60" }
+      title: "Logements",
+      headerStyle: { backgroundColor: "#008489" },
+      headerTintColor: "white"
     }
   },
   Room: {
-    screen: Room
+    screen: Room,
+    navigationOptions: {
+      headerStyle: { backgroundColor: "#008489" },
+      headerTintColor: "white"
+    }
   },
   RentRoom: {
-    screen: RentRoom
+    screen: RentRoom,
+    navigationOptions: {
+      headerStyle: { backgroundColor: "#008489" },
+      headerTintColor: "white"
+    }
   },
   Chat: {
-    screen: Chat
+    screen: Chat,
+    navigationOptions: {
+      title: "Chat",
+      headerStyle: { backgroundColor: "#008489" },
+      headerTintColor: "white"
+    }
   }
 });
 

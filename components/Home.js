@@ -18,17 +18,15 @@ class Home extends React.Component {
         <View style={styles.icon}>
           <Image
             style={{
-              textAlign: "center",
-              color: "white",
-              marginTop: 130,
+              marginTop: 70,
               marginLeft: 140
             }}
-            source={require("../images/logo.png")}
+            source={require("../images/logo-airbnb.png")}
           />
         </View>
 
         <View>
-          <Text
+          {/* <Text
             style={{
               fontSize: 50,
               marginTop: 200,
@@ -37,7 +35,7 @@ class Home extends React.Component {
             }}
           >
             Welcome
-          </Text>
+          </Text> */}
           <View style={styles.buttonOpacity}>
             <TouchableOpacity
               style={styles.loginHome}
@@ -50,9 +48,9 @@ class Home extends React.Component {
           </View>
           <Text
             style={{
-              color: "white",
+              color: "#ff5b60",
               fontWeight: "bold",
-              marginTop: 30,
+              marginTop: 10,
               paddingLeft: 100
             }}
           >
@@ -71,12 +69,12 @@ class Home extends React.Component {
         </View>
         <View style={styles.buttonOpacity}>
           <TouchableOpacity
-            style={styles.loginHomeRoom}
+            style={styles.loginHomeTest}
             onPress={() => {
               this.props.navigation.navigate("RoomLists");
             }}
           >
-            <Text style={styles.buttonRoom}>Visualiser les annonces</Text>
+            <Text style={styles.buttonAdd}>Visualiser les annonces</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -87,40 +85,34 @@ class Home extends React.Component {
 export default Home;
 
 const styles = StyleSheet.create({
-  containerLoginText: {
-    backgroundColor: "#ff5b60",
-    flex: 1
-  },
   loginHome: {
     width: 150,
+    marginVertical: 10,
     paddingVertical: 10,
     justifyContent: "center",
-    borderRadius: 50,
-    backgroundColor: "white"
+    borderRadius: 10,
+    backgroundColor: "#ff5b60"
+  },
+  loginHomeTest: {
+    width: 250,
+    paddingVertical: 10,
+    justifyContent: "center",
+    borderRadius: 10,
+    backgroundColor: "#ff5b60"
   },
   buttonAdd: {
     paddingLeft: 27,
     fontSize: 20,
-    color: "#ff5b60"
+    color: "white"
   },
   icon: {
+    marginBottom: 400,
+    marginLeft: 100,
+    alignItems: "center",
     height: 70,
     width: 30
   },
   buttonOpacity: {
-    alignItems: "center",
-    marginTop: 30
-  },
-  buttonRoom: {
-    paddingLeft: 27,
-    fontSize: 20,
-    color: "white"
-  },
-  loginHomeRoom: {
-    width: 250,
-    paddingVertical: 10,
-    justifyContent: "center",
-    borderColor: "white",
-    backgroundColor: "#ff5b60"
+    alignItems: "center"
   }
 });

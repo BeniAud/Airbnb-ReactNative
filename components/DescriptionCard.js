@@ -55,7 +55,7 @@ class DescriptionCard extends React.Component {
 export default DescriptionCard;
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#ffc200",
+    backgroundColor: "#008489",
     width: 100,
     borderRadius: 5,
     alignItems: "center",

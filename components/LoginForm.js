@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
             style={styles.textInput}
             label="Email Address"
             placeholder="you@domain.com"
-            placeholderTextColor="white"
+            placeholderTextColor="#797979"
             value={this.state.email}
             onChangeText={value => this.setState({ email: value })}
           />
@@ -62,7 +62,7 @@ class LoginForm extends React.Component {
             style={styles.textInput}
             label="Password"
             placeholder="*******"
-            placeholderTextColor="white"
+            placeholderTextColor="#797979"
             secureTextEntry //boolean ={true}
             value={this.state.password}
             onChangeText={value => this.setState({ password: value })}
@@ -84,6 +84,23 @@ class LoginForm extends React.Component {
               <Text style={styles.buttonAdd}>Confirmer</Text>
             </TouchableOpacity>
           </View>
+          <View style={styles.account}>
+            <Text style={{ fontSize: 15, color: "#797979" }}>
+              Vous n'avez pas de compte ?
+            </Text>
+            <View>
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate("SignUp");
+                }}
+              >
+                <Text style={{ color: "#008489", fontSize: 15 }}>
+                  {" "}
+                  Inscription
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </ScrollView>
       </KeyboardAvoidingView>
     );
@@ -96,7 +113,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#ff5b60",
+    backgroundColor: "white",
     paddingVertical: 100
   },
   loginHome: {
@@ -104,24 +121,30 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 50,
+    borderRadius: 10,
     marginTop: 50,
-    backgroundColor: "white"
+    backgroundColor: "#008489"
   },
   buttonAdd: {
     fontSize: 20,
-    color: "#ff5b60"
+    color: "white"
   },
   textInput: {
     justifyContent: "center",
     paddingTop: 50,
-    color: "white",
-    fontSize: 20,
+    color: "#ff5b60",
+    opacity: 0.8,
+    fontSize: 15,
     borderBottomWidth: 1,
-    borderColor: "white",
+    borderColor: "#008489",
     width: 250
   },
   buttonOpacity: {
     alignItems: "center"
+  },
+  account: {
+    flexDirection: "row",
+    marginTop: 40,
+    fontSize: 18
   }
 });
