@@ -1,9 +1,11 @@
 import React from "react";
 import { Image, ImageBackground, StyleSheet, View, Text } from "react-native";
 import StarRating from "react-native-star-rating";
+import { ScrollView } from "react-native-gesture-handler";
 
 class CardRoom extends React.Component {
   render() {
+    //horizontal={true}
     return (
       <View>
         <ImageBackground
@@ -14,6 +16,7 @@ class CardRoom extends React.Component {
             <Text style={styles.price}>{this.props.price}€</Text>
           </View>
         </ImageBackground>
+
         <View style={styles.textDescription}>
           <View style={{ marginBottom: 20 }}>
             <Text numberOfLines={1} style={styles.textTitle}>

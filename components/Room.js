@@ -16,30 +16,41 @@ class Room extends React.Component {
     const item = this.props.navigation.getParam("item");
 
     return (
-      <ScrollView>
-        <View>
-          <CardRoom
-            photos={item.photos}
-            title={item.title}
-            price={item.price}
-            rating={item.ratingValue}
-            reviews={item.reviews}
-            user={item.user}
-          />
-          <DescriptionCard description={item.description} />
-          <Map location={item.loc} />
-          <View style={styles.buttonOpacity}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => {
-                this.props.navigation.navigate("RentRoom");
-              }}
-            >
-              <Text style={styles.buttonAdd}>Réserver</Text>
-            </TouchableOpacity>
+      <View>
+        <ScrollView>
+          <View>
+            <CardRoom
+              photos={item.photos}
+              title={item.title}
+              price={item.price}
+              rating={item.ratingValue}
+              reviews={item.reviews}
+              user={item.user}
+            />
+            <View style={styles.borderButton}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate("Chat");
+                }}
+              >
+                <Text style={styles.HoteButton}>Contacter l'hôte</Text>
+              </TouchableOpacity>
+            </View>
+            <DescriptionCard description={item.description} />
+            <Map location={item.loc} />
           </View>
+        </ScrollView>
+        <View style={styles.buttonOpacity}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              this.props.navigation.navigate("RentRoom");
+            }}
+          >
+            <Text style={styles.buttonAdd}>Réserver</Text>
+          </TouchableOpacity>
         </View>
-      </ScrollView>
+      </View>
     );
   }
 }
@@ -54,10 +65,33 @@ const styles = StyleSheet.create({
     padding: 15
   },
   button: {
-    borderRadius: 10
+    backgroundColor: "#FE5B5E",
+    width: 140,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    flexDirection: "row",
+    position: "absolute",
+    bottom: 25,
+    shadowColor: "#000",
+    shadowOffset: { width: 3, height: 3 },
+    shadowOpacity: 0.4,
+    shadowRadius: 2
   },
   buttonOpacity: {
-    alignItems: "center",
-    marginTop: 20
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  HoteButton: {
+    color: "white",
+    alignItems: "center"
+  },
+  borderButton: {
+    backgroundColor: "#008489",
+    borderRadius: 5,
+    width: 120,
+    paddingHorizontal: 5,
+    marginLeft: 20,
+    paddingVertical: 5
   }
 });

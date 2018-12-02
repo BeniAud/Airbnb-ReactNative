@@ -1,23 +1,20 @@
 import React from "react";
-
 import { View } from "react-native";
 import MapView from "react-native-maps";
 class Map extends React.Component {
   render() {
-    //
-
     return (
       <View>
         <MapView
           style={{
             width: "100%",
-            height: 200
+            height: 400
           }}
           initialRegion={{
             latitude: this.props.location[1],
             longitude: this.props.location[0],
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421
+            latitudeDelta: 0.00922,
+            longitudeDelta: 0.00421
           }}
         >
           <MapView.Marker

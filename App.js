@@ -5,6 +5,7 @@ import RoomLists from "./components/RoomLists";
 import SignUp from "./components/SignUp";
 import Room from "./components/Room";
 import RentRoom from "./components/RentRoom";
+import Chat from "./components/Chat";
 const AppNavigator = createStackNavigator({
   Home: {
     screen: Homescreen,
@@ -30,6 +31,9 @@ const AppNavigator = createStackNavigator({
   },
   RentRoom: {
     screen: RentRoom
+  },
+  Chat: {
+    screen: Chat
   }
 });
 
