@@ -18,6 +18,7 @@ class Home extends React.Component {
         <View style={styles.icon}>
           <Image
             style={{
+              tintColor: "#ff5b60",
               marginTop: 70,
               marginLeft: 140
             }}
@@ -91,19 +92,21 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     justifyContent: "center",
     borderRadius: 10,
-    backgroundColor: "#ff5b60"
+    borderColor: "#ff5b60",
+    borderWidth: 1
   },
   loginHomeTest: {
     width: 250,
     paddingVertical: 10,
     justifyContent: "center",
     borderRadius: 10,
-    backgroundColor: "#ff5b60"
+    borderColor: "#ff5b60",
+    borderWidth: 1
   },
   buttonAdd: {
     paddingLeft: 27,
     fontSize: 20,
-    color: "white"
+    color: "#ff5b60"
   },
   icon: {
     marginBottom: 400,

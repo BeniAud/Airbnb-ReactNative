@@ -76,7 +76,7 @@ class LoginForm extends React.Component {
               // borderLeftWidth: 1,
               // borderColor: "white",
               // width: 40,
-              color: "#008489",
+              color: "#ff5b60",
               marginTop: 20,
               marginLeft: 130
             }}
@@ -88,7 +88,7 @@ class LoginForm extends React.Component {
             style={styles.textInput}
             label="Email Address"
             placeholder="Email : you@domain.com"
-            placeholderTextColor="#797979"
+            placeholderTextColor="##ff5b60"
             value={this.state.email}
             onChangeText={value => this.setState({ email: value })}
           />
@@ -96,7 +96,7 @@ class LoginForm extends React.Component {
             style={styles.textInput}
             label="Password"
             placeholder=" Mot de passe : *******"
-            placeholderTextColor="#797979"
+            placeholderTextColor="##ff5b60"
             secureTextEntry
             value={this.state.password}
             onChangeText={value => this.setState({ password: value })}
@@ -105,7 +105,7 @@ class LoginForm extends React.Component {
             style={styles.textInput}
             label="Password"
             placeholder=" Confirmer mot de passe : *******"
-            placeholderTextColor="#797979"
+            placeholderTextColor="##ff5b60"
             secureTextEntry
             value={this.state.passwordConfirm}
             onChangeText={value => this.setState({ passwordConfirm: value })}
@@ -134,7 +134,7 @@ class LoginForm extends React.Component {
             style={styles.textInput}
             label="description"
             placeholder="description"
-            placeholderTextColor="#797979"
+            placeholderTextColor="##ff5b60"
             value={this.state.description}
             onChangeText={value => this.setState({ description: value })}
           />
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 10,
     marginTop: 40,
-    backgroundColor: "#008489"
+    backgroundColor: "#ff5b60"
   },
   buttonAdd: {
     fontSize: 20,
@@ -180,10 +180,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     opacity: 0.8,
     paddingTop: 45,
-    color: "#008489",
+    color: "#ff5b60",
     fontSize: 15,
     borderBottomWidth: 1,
-    borderColor: "#008489",
+    borderColor: "#ff5b60",
     width: 250
   },
   buttonOpacity: {
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingTop: 10,
     fontSize: 15,
-    color: "#008489",
+    color: "#ff5b60",
     alignItems: "center"
   }
 });

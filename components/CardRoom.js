@@ -1,7 +1,13 @@
 import React from "react";
-import { Image, ImageBackground, StyleSheet, View, Text } from "react-native";
+import {
+  Image,
+  ImageBackground,
+  StyleSheet,
+  View,
+  ScrollView,
+  Text
+} from "react-native";
 import StarRating from "react-native-star-rating";
-import { ScrollView } from "react-native-gesture-handler";
 
 class CardRoom extends React.Component {
   render() {

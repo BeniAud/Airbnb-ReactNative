@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
             style={styles.textInput}
             label="Email Address"
             placeholder="you@domain.com"
-            placeholderTextColor="#797979"
+            placeholderTextColor="#ff5b60"
             value={this.state.email}
             onChangeText={value => this.setState({ email: value })}
           />
@@ -62,7 +62,7 @@ class LoginForm extends React.Component {
             style={styles.textInput}
             label="Password"
             placeholder="*******"
-            placeholderTextColor="#797979"
+            placeholderTextColor="#ff5b60"
             secureTextEntry //boolean ={true}
             value={this.state.password}
             onChangeText={value => this.setState({ password: value })}
@@ -85,7 +85,7 @@ class LoginForm extends React.Component {
             </TouchableOpacity>
           </View>
           <View style={styles.account}>
-            <Text style={{ fontSize: 15, color: "#797979" }}>
+            <Text style={{ fontSize: 15, color: "#ff5b60" }}>
               Vous n'avez pas de compte ?
             </Text>
             <View>
@@ -94,7 +94,7 @@ class LoginForm extends React.Component {
                   this.props.navigation.navigate("SignUp");
                 }}
               >
-                <Text style={{ color: "#008489", fontSize: 15 }}>
+                <Text style={{ color: "#ff5b60", fontSize: 15 }}>
                   {" "}
                   Inscription
                 </Text>
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 10,
     marginTop: 50,
-    backgroundColor: "#008489"
+    backgroundColor: "#ff5b60"
   },
   buttonAdd: {
     fontSize: 20,
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     fontSize: 15,
     borderBottomWidth: 1,
-    borderColor: "#008489",
+    borderColor: "#ff5b60",
     width: 250
   },
   buttonOpacity: {

@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   borderButton: {
-    backgroundColor: "#008489",
+    backgroundColor: "#ff5b60",
     borderRadius: 5,
     width: 120,
     paddingHorizontal: 5,

@@ -17,7 +17,7 @@ const AppNavigator = createStackNavigator({
     screen: LoginForm,
     navigationOptions: {
       title: "Connexion",
-      headerStyle: { backgroundColor: "#008489" },
+      headerStyle: { backgroundColor: "#ff5b60" },
       headerTintColor: "white"
     }
   },
@@ -25,7 +25,7 @@ const AppNavigator = createStackNavigator({
     screen: SignUp,
     navigationOptions: {
       title: "Inscription",
-      headerStyle: { backgroundColor: "#008489" },
+      headerStyle: { backgroundColor: "#ff5b60" },
       headerTintColor: "white"
     }
   },
@@ -33,21 +33,21 @@ const AppNavigator = createStackNavigator({
     screen: RoomLists,
     navigationOptions: {
       title: "Logements",
-      headerStyle: { backgroundColor: "#008489" },
+      headerStyle: { backgroundColor: "#ff5b60" },
       headerTintColor: "white"
     }
   },
   Room: {
     screen: Room,
     navigationOptions: {
-      headerStyle: { backgroundColor: "#008489" },
+      headerStyle: { backgroundColor: "#ff5b60" },
       headerTintColor: "white"
     }
   },
   RentRoom: {
     screen: RentRoom,
     navigationOptions: {
-      headerStyle: { backgroundColor: "#008489" },
+      headerStyle: { backgroundColor: "#ff5b60" },
       headerTintColor: "white"
     }
   },
@@ -55,7 +55,7 @@ const AppNavigator = createStackNavigator({
     screen: Chat,
     navigationOptions: {
       title: "Chat",
-      headerStyle: { backgroundColor: "#008489" },
+      headerStyle: { backgroundColor: "#ff5b60" },
       headerTintColor: "white"
     }
   }
